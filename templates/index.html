@@ -27,7 +27,7 @@
 				<div class="container">
 					<div class="row align-items-center justify-content-between">
 						<div class="col-lg-6 col-md-6 home-about-left">
-							<img class="img-fluid" src="img/about-img.png" alt="">
+							<img class="img-fluid" src="{static% 'img/about-img.png' %}" alt="">
 						</div>
 						<div class="col-lg-5 col-md-6 home-about-right">
 							<h6>About Me</h6>
@@ -54,13 +54,13 @@
 		                </div>
 		            </div>						
 					<div class="row">
-						{% for service in services %}
+						{% for i in services %}
 						<div class="col-lg-4 col-md-6">
 							<div class="single-services">
 								<span class="lnr {{service.logo}}"></span>
-								<a href="#"><h4>{{service.title}}</h4></a>
+								<a href="#"><h4>{{i.title}}</h4></a>
 								<p>
-									{{service.description}}
+									{{i.description}}
 								</p>
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 							<p>Real Professionals</p>
 						</div>												
 					</div>
-				</div>	
+				</div>
 			</section>
 			<!-- end fact Area -->	
 
@@ -243,30 +243,22 @@
 		            </div>
 		            <div class="row">
 		                <div class="active-testimonial">
+
+							{% for i in Feedbackitems %}
 		                    <div class="single-testimonial item d-flex flex-row">
 		                        <div class="thumb">
-		                            <img class="img-fluid" src="img/elements/user1.png" alt="">
+		                            <img class="img-fluid" src="{{i.image.url}}" style="height:50px; width:50px;" alt="">
 		                        </div>
 		                        <div class="desc">
 		                            <p>
-		                                Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills, the bigger the payoff you.		     
+										{{i.name}}
 		                            </p>
-		                            <h4>Harriet Maxwell</h4>
-		                            <p>CEO at Google</p>
+		                            <h4>{{i.description}}</h4>
+		                            <p>{{i.post}}</p>
 		                        </div>
 		                    </div>
-		                    <div class="single-testimonial item d-flex flex-row">
-		                        <div class="thumb">
-		                            <img class="img-fluid" src="img/elements/user2.png" alt="">
-		                        </div>
-		                        <div class="desc">
-		                            <p>
-		                                A purpose is the eternal condition for success. Every former smoker can tell you just how hard it is to stop smoking cigarettes. However.
-		                            </p>
-		                            <h4>Carolyn Craig</h4>
-		                            <p>CEO at Facebook</p>
-		                        </div>
-		                    </div>
+							{% endfor %}
+
 		                </div>
 		            </div>
 		        </div>

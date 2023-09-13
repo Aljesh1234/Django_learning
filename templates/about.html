@@ -42,42 +42,19 @@
 							<h4 class="pt-30">Tools Expertness</h4>	
 						</div>
 					</div>
-					<div class="row skillbar-wraps">					
+					<div class="row skillbar-wraps">
+
+						{% for i in skills%}
 						<div class="col-lg-6 skill-left">
 							<div class="single-skill">
 								<p>
-									After Effects 85%
+									{{i.skill}} {{i.percentage}}
 								</p>
-								<div class="skill" data-width="85"></div>
+								<div class="skill" data-width="{{i.percentage}}"></div>
+
 							</div>
-							<div class="single-skill">
-								<p>
-									Photoshop 90%
-								</p>
-								<div class="skill" data-width="90"></div>
-							</div>
-							<div class="single-skill">
-								<p>
-									Illustrator 70%
-								</p>
-								<div class="skill" data-width="70"></div>
-							</div>																				
 						</div>
-						<div class="col-lg-6 skill-right">
-							<div class="single-skill">
-								<p>
-									Sublime 95%
-								</p>
-								<div class="skill" data-width="95"></div>
-							</div>								
-							<div class="single-skill">
-								<p>
-									Sketch 85%
-								</p>
-								<div class="skill" data-width="85"></div>
-							</div>
-							
-						</div>
+						{% endfor %}
 					</div>
 				</div>	
 			</section>
@@ -214,4 +191,4 @@
 		    </section>
 		    <!-- End brands Area -->	
 
-{% endblock %}
+			{% endblock %}

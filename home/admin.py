@@ -6,3 +6,6 @@ from .models import *
 admin.site.register(Services)
 admin.site.register(Feedback)
 admin.site.register(SiteInfo)
+admin.site.register(Contact)
+admin.site.register(Price)
+admin.site.register(Skills)
